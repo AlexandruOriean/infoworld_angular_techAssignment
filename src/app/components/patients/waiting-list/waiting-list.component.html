@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 offset-1">
+      <h2 style="text-align: center; margin-bottom: 30px">Lista de asteptare</h2>
+      <table class="table table-hover table-responsive-md" style="cursor: pointer">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nume</th>
+          <th scope="col">Prenume</th>
+          <th scope="col">Data nasterii</th>
+          <th scope="col">Sex</th>
+          <th scope="col" style="text-align: center">Optiuni</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let patient of patients">
+          <th scope="row">{{patient.orderNum}}</th>
+          <td>{{patient.lastName}}</td>
+          <td>{{patient.firstName}}</td>
+          <td>{{patient.dateOfBirth}}</td>
+          <td>{{patient.sex}}</td>
+          <td style="display: flex; justify-content: space-evenly; align-content: center">
+            <app-delete-patient [orderNum]="patient.orderNum"></app-delete-patient>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <hr>
+      <div style="text-align: center">
+        <button class="btn btn-primary"><i class="fas fa-user-plus" style="margin-right:10px"></i>Adauga pacient
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

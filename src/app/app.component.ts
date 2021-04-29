@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {WaitingListComponent} from './components/patients/waiting-list/waiting-list.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-project';
+  loadedFeature = 'patients';
+
+  onNavigate(feature: string): void {
+    this.loadedFeature = feature;
+  }
 }
